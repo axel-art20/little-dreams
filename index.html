@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Little Dreams</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+
+      font-family: Arial, sans-serif;
+
+      background:
+      linear-gradient(
+      135deg,
+      #120818 0%,
+      #1f1030 20%,
+      #30204d 40%,
+      #ff7aa2 80%,
+      #ffb38a 100%
+      );
+
+      background-attachment:fixed;
+
+      color:white;
+
+      overflow-x:hidden;
+
+      min-height:100vh;
+
+    }
+
+    /* GLOW BACKGROUND */
+
+    .glow{
+
+      position:fixed;
+
+      border-radius:50%;
+
+      filter:blur(140px);
+
+      z-index:-1;
+
+      opacity:0.6;
+
+      animation:floatGlow 8s ease-in-out infinite;
+
+    }
+
+    .glow1{
+
+      width:500px;
+      height:500px;
+
+      background:#ff6ea8;
+
+      top:-150px;
+      left:-150px;
+
+    }
+
+    .glow2{
+
+      width:600px;
+      height:600px;
+
+      background:#7b5cff;
+
+      bottom:-200px;
+      right:-150px;
+
+      animation-delay:2s;
+
+    }
+
+    .glow3{
+
+      width:400px;
+      height:400px;
+
+      background:#ffb36b;
+
+      top:40%;
+      left:30%;
+
+      animation-delay:4s;
+
+    }
+
+    @keyframes floatGlow{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-25px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+
+    }
+
+    /* HEADER */
+
+    header{
+
+      text-align:center;
+
+      padding:110px 20px 80px;
+
+      animation:fadeUp 1s ease;
+
+    }
+
+    .logo-image{
+
+      width:130px;
+
+      margin-bottom:25px;
+
+      filter:
+      drop-shadow(0 0 20px rgba(255,255,255,0.5))
+      drop-shadow(0 0 40px rgba(255,120,180,0.5));
+
+      animation:floatLogo 5s ease-in-out infinite;
+
+    }
+
+    @keyframes floatLogo{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-12px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+
+    }
+
+    h1{
+
+      font-size:80px;
+
+      font-weight:200;
+
+      letter-spacing:5px;
+
+      margin-bottom:10px;
+
+      text-shadow:
+      0 0 20px rgba(255,255,255,0.2);
+
+    }
+
+    .subtitle{
+
+      color:#ffe0eb;
+
+      letter-spacing:4px;
+
+      margin-bottom:15px;
+
+    }
+
+    .creator{
+
+      color:#f3d4df;
+
+      font-size:18px;
+
+    }
+
+    /* GALLERY */
+
+    .gallery{
+
+      width:92%;
+
+      margin:auto;
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(280px,1fr));
+
+      gap:35px;
+
+      padding-bottom:120px;
+
+    }
+
+    .card{
+
+      position:relative;
+
+      border-radius:35px;
+
+      overflow:hidden;
+
+      transition:0.5s;
+
+      animation:fadeUp 1s ease;
+
+    }
+
+    .card::before{
+
+      content:"";
+
+      position:absolute;
+
+      inset:0;
+
+      padding:2px;
+
+      border-radius:35px;
+
+      background:
+      linear-gradient(
+      135deg,
+      rgba(255,255,255,0.6),
+      rgba(255,120,180,0.4),
+      rgba(123,92,255,0.4),
+      rgba(255,179,107,0.4)
+      );
+
+      -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+
+      -webkit-mask-composite:xor;
+
+      pointer-events:none;
+
+    }
+
+    .card:hover{
+
+      transform:
+      translateY(-12px)
+      scale(1.03);
+
+    }
+
+    .card img{
+
+      width:100%;
+
+      height:500px;
+
+      object-fit:cover;
+
+      display:block;
+
+      transition:0.7s;
+
+    }
+
+    .card:hover img{
+
+      transform:scale(1.08);
+
+      filter:
+      saturate(1.2)
+      brightness(1.05);
+
+    }
+
+    .overlay{
+
+      position:absolute;
+
+      inset:0;
+
+      background:
+      linear-gradient(
+      to top,
+      rgba(0,0,0,0.9),
+      rgba(0,0,0,0.1)
+      );
+
+    }
+
+    .info{
+
+      position:absolute;
+
+      bottom:0;
+
+      width:100%;
+
+      padding:25px;
+
+    }
+
+    .info h3{
+
+      font-size:28px;
+
+      margin-bottom:15px;
+
+      font-weight:500;
+
+    }
+
+    /* BUTTON */
+
+    .btn{
+
+      display:inline-block;
+
+      text-decoration:none;
+
+      padding:14px 24px;
+
+      border-radius:20px;
+
+      background:
+      linear-gradient(
+      to right,
+      #ffd6e7,
+      #ffffff
+      );
+
+      color:black;
+
+      font-weight:bold;
+
+      transition:0.3s;
+
+    }
+
+    .btn:hover{
+
+      transform:scale(1.05);
+
+      box-shadow:
+      0 0 25px rgba(255,255,255,0.3);
+
+    }
+
+    /* ABOUT */
+
+    .about{
+
+      width:85%;
+
+      margin:auto;
+
+      text-align:center;
+
+      padding-bottom:120px;
+
+    }
+
+    .about h2{
+
+      font-size:60px;
+
+      margin-bottom:25px;
+
+      font-weight:200;
+
+    }
+
+    .about p{
+
+      color:#f0dce5;
+
+      max-width:750px;
+
+      margin:auto;
+
+      line-height:1.9;
+
+      font-size:19px;
+
+    }
+
+    /* SOCIALS */
+
+    .socials{
+
+      display:flex;
+
+      justify-content:center;
+
+      gap:20px;
+
+      margin-bottom:100px;
+
+      flex-wrap:wrap;
+
+    }
+
+    .socials a{
+
+      text-decoration:none;
+
+      color:white;
+
+      padding:15px 28px;
+
+      border-radius:25px;
+
+      background:
+      rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(12px);
+
+      border:
+      1px solid rgba(255,255,255,0.12);
+
+      transition:0.4s;
+
+      font-weight:bold;
+
+    }
+
+    .socials a:hover{
+
+      transform:
+      translateY(-6px);
+
+      background:
+      rgba(255,255,255,0.15);
+
+      box-shadow:
+      0 0 25px rgba(255,255,255,0.2);
+
+    }
+
+    /* FOOTER */
+
+    footer{
+
+      text-align:center;
+
+      padding:40px;
+
+      color:#f0dce5;
+
+      border-top:
+      1px solid rgba(255,255,255,0.1);
+
+      background:
+      rgba(0,0,0,0.15);
+
+      backdrop-filter:blur(10px);
+
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeUp{
+
+      from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+      }
+
+      to{
+
+        opacity:1;
+
+        transform:translateY(0px);
+
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+<div class="glow glow3"></div>
+
+<header>
+
+  <img src="image/logo.png" class="logo-image">
+
+  <h1>Little Dreams</h1>
+
+  <p class="subtitle">
+    DREAMY DIGITAL ART
+  </p>
+
+  <p class="creator">
+    by axel.art
+  </p>
+
+</header>
+
+<section class="gallery">
+
+  <div class="card">
+    <img src="image/1.PNG">
+    <div class="overlay"></div>
+    <div class="info">
+      <h3>Dream 1</h3>
+      <a class="btn" href="image/1.PNG" download>
+        Télécharger
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image/2.PNG">
+    <div class="overlay"></div>
+    <div class="info">
+      <h3>Dream 2</h3>
+      <a class="btn" href="image/2.PNG" download>
+        Télécharger
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image/3.PNG">
+    <div class="overlay"></div>
+    <div class="info">
+      <h3>Dream 3</h3>
+      <a class="btn" href="image/3.PNG" download>
+        Télécharger
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image/4.PNG">
+    <div class="overlay"></div>
+    <div class="info">
+      <h3>Dream 4</h3>
+      <a class="btn" href="image/4.PNG" download>
+        Télécharger
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image/5.PNG">
+    <div class="overlay"></div>
+    <div class="info">
+      <h3>Dream 5</h3>
+      <a class="btn" href="image/5.PNG" download>
+        Télécharger
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image/6.PNG">
+    <div class="overlay"></div>
+    <div class="info">
+      <h3>Dream 6</h3>
+      <a class="btn" href="image/6.PNG" download>
+        Télécharger
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image/7.PNG">
+    <div class="overlay"></div>
+    <div class="info">
+      <h3>Dream 7</h3>
+      <a class="btn" href="image/7.PNG" download>
+        Télécharger
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image/8.PNG">
+    <div class="overlay"></div>
+    <div class="info">
+      <h3>Dream 8</h3>
+      <a class="btn" href="image/8.PNG" download>
+        Télécharger
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image/9.PNG">
+    <div class="overlay"></div>
+    <div class="info">
+      <h3>Dream 9</h3>
+      <a class="btn" href="image/9.PNG" download>
+        Télécharger
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image/10.PNG">
+    <div class="overlay"></div>
+    <div class="info">
+      <h3>Dream 10</h3>
+      <a class="btn" href="image/10.PNG" download>
+        Télécharger
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="image/11.PNG">
+    <div class="overlay"></div>
+    <div class="info">
+      <h3>Dream 11</h3>
+      <a class="btn" href="image/11.PNG" download>
+        Télécharger
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<section class="about">
+
+  <h2>Enter The Dream.</h2>
+
+  <p>
+    A colorful universe made of emotions,
+    imagination and dreamy digital art.
+  </p>
+
+</section>
+
+<div class="socials">
+
+  <a href="https://www.instagram.com/axel_draws20?igsh=dnpqZWFoc2htNnho&utm_source=qr" target="_blank">
+    Instagram
+  </a>
+
+</div>
+
+<footer>
+  © 2026 Little Dreams — by axel.art
+</footer>
+
+</body>
+</html>
