@@ -1,729 +1,929 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Little Dreams</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+<title>Little Dreams</title>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+<style>
 
-    html{
-      scroll-behavior:smooth;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    body{
+html{
+  scroll-behavior:smooth;
+}
 
-      font-family:Arial, sans-serif;
+body{
 
-      color:white;
+  font-family:Arial,sans-serif;
 
-      overflow-x:hidden;
+  color:white;
 
-      background:
-      linear-gradient(
-      -45deg,
-      #120818,
-      #25133a,
-      #4d2b63,
-      #ff7aa2,
-      #ffb36b
-      );
+  overflow-x:hidden;
 
-      background-size:400% 400%;
+  background:
+  linear-gradient(
+  -45deg,
+  #120818,
+  #25133a,
+  #4d2b63,
+  #ff7aa2,
+  #ffb36b
+  );
 
-      animation:bgMove 15s ease infinite;
+  background-size:400% 400%;
 
-      min-height:100vh;
+  animation:bgMove 15s ease infinite;
 
-    }
+  min-height:100vh;
 
-    @keyframes bgMove{
+}
 
-      0%{
-        background-position:0% 50%;
-      }
+@keyframes bgMove{
 
-      50%{
-        background-position:100% 50%;
-      }
+  0%{
+    background-position:0% 50%;
+  }
 
-      100%{
-        background-position:0% 50%;
-      }
+  50%{
+    background-position:100% 50%;
+  }
 
-    }
+  100%{
+    background-position:0% 50%;
+  }
 
-    /* STARS */
+}
 
-    .stars{
-      position:fixed;
-      width:100%;
-      height:100%;
-      top:0;
-      left:0;
-      overflow:hidden;
-      z-index:-1;
-    }
+/* STARS */
 
-    .star{
+.stars{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-1;
+}
 
-      position:absolute;
+.star{
 
-      width:3px;
-      height:3px;
+  position:absolute;
 
-      background:white;
+  width:3px;
+  height:3px;
 
-      border-radius:50%;
+  background:white;
 
-      opacity:0.7;
+  border-radius:50%;
 
-      animation:twinkle 4s infinite alternate;
+  animation:twinkle 4s infinite alternate;
 
-    }
+}
 
-    @keyframes twinkle{
+@keyframes twinkle{
 
-      from{
-        opacity:0.2;
-        transform:scale(1);
-      }
+  from{
+    opacity:0.3;
+    transform:scale(1);
+  }
 
-      to{
-        opacity:1;
-        transform:scale(1.8);
-      }
+  to{
+    opacity:1;
+    transform:scale(1.8);
+  }
 
-    }
+}
 
-    /* HEADER */
+/* HEADER */
 
-    header{
+header{
 
-      min-height:100vh;
+  min-height:100vh;
 
-      display:flex;
+  display:flex;
 
-      flex-direction:column;
+  flex-direction:column;
 
-      justify-content:center;
+  justify-content:center;
 
-      align-items:center;
+  align-items:center;
 
-      text-align:center;
+  text-align:center;
 
-      padding:20px;
+  padding:20px;
 
-      animation:fadeUp 1.5s ease;
+}
 
-    }
+.logo-image{
 
-    .logo-image{
+  width:150px;
 
-      width:150px;
+  margin-bottom:30px;
 
-      margin-bottom:30px;
+  filter:
+  drop-shadow(0 0 25px rgba(255,255,255,0.5))
+  drop-shadow(0 0 50px rgba(255,120,180,0.5));
 
-      filter:
-      drop-shadow(0 0 25px rgba(255,255,255,0.5))
-      drop-shadow(0 0 50px rgba(255,120,180,0.5));
+  animation:floatLogo 5s ease-in-out infinite;
 
-      animation:floatLogo 5s ease-in-out infinite;
+}
 
-    }
+@keyframes floatLogo{
 
-    @keyframes floatLogo{
+  0%{
+    transform:translateY(0px);
+  }
 
-      0%{
-        transform:translateY(0px);
-      }
+  50%{
+    transform:translateY(-15px);
+  }
 
-      50%{
-        transform:translateY(-15px);
-      }
+  100%{
+    transform:translateY(0px);
+  }
 
-      100%{
-        transform:translateY(0px);
-      }
+}
 
-    }
+h1{
 
-    h1{
+  font-size:90px;
 
-      font-size:90px;
+  font-weight:200;
 
-      font-weight:200;
+  letter-spacing:6px;
 
-      letter-spacing:6px;
+  margin-bottom:15px;
 
-      margin-bottom:15px;
+}
 
-      text-shadow:
-      0 0 25px rgba(255,255,255,0.2);
+.subtitle{
 
-    }
+  color:#ffe6ef;
 
-    .subtitle{
+  letter-spacing:4px;
 
-      color:#ffe6ef;
+  margin-bottom:20px;
 
-      letter-spacing:4px;
+}
 
-      margin-bottom:25px;
+.creator{
 
-      font-size:18px;
+  color:#f5d7e4;
 
-    }
+  font-size:20px;
 
-    .creator{
+  margin-bottom:50px;
 
-      color:#f7d8e4;
+}
 
-      font-size:20px;
+.enter-btn{
 
-      margin-bottom:50px;
+  text-decoration:none;
 
-    }
+  color:white;
 
-    .enter-btn{
+  padding:16px 34px;
 
-      text-decoration:none;
+  border-radius:30px;
 
-      padding:16px 34px;
+  background:
+  rgba(255,255,255,0.08);
 
-      border-radius:30px;
+  border:
+  1px solid rgba(255,255,255,0.15);
 
-      color:white;
+  backdrop-filter:blur(10px);
 
-      font-weight:bold;
+  transition:0.4s;
 
-      background:
-      rgba(255,255,255,0.08);
+}
 
-      border:
-      1px solid rgba(255,255,255,0.15);
+.enter-btn:hover{
 
-      backdrop-filter:blur(10px);
+  transform:
+  translateY(-6px);
 
-      transition:0.4s;
+  background:
+  rgba(255,255,255,0.15);
 
-    }
+}
 
-    .enter-btn:hover{
+/* GALLERY */
 
-      transform:
-      translateY(-6px)
-      scale(1.05);
+.gallery{
 
-      background:
-      rgba(255,255,255,0.15);
+  width:92%;
 
-      box-shadow:
-      0 0 30px rgba(255,255,255,0.2);
+  margin:auto;
 
-    }
+  display:grid;
 
-    /* GALLERY */
+  grid-template-columns:
+  repeat(auto-fit,minmax(280px,1fr));
 
-    .gallery{
+  gap:35px;
 
-      width:92%;
+  padding-bottom:140px;
 
-      margin:auto;
+}
 
-      display:grid;
+.card{
 
-      grid-template-columns:
-      repeat(auto-fit,minmax(280px,1fr));
+  position:relative;
 
-      gap:35px;
+  border-radius:35px;
 
-      padding-bottom:140px;
+  overflow:hidden;
 
-    }
+  cursor:pointer;
 
-    .card{
+  transition:0.5s;
 
-      position:relative;
+}
 
-      border-radius:35px;
+.card:hover{
 
-      overflow:hidden;
+  transform:
+  translateY(-12px)
+  scale(1.03);
 
-      transition:0.6s;
+}
 
-      animation:fadeUp 1s ease;
+.card img{
 
-      text-decoration:none;
+  width:100%;
 
-      color:white;
+  height:520px;
 
-      display:block;
+  object-fit:cover;
 
-    }
+  display:block;
 
-    .card::before{
+  transition:0.7s;
 
-      content:"";
+}
 
-      position:absolute;
+.card:hover img{
 
-      inset:0;
+  transform:scale(1.08);
 
-      padding:2px;
+}
 
-      border-radius:35px;
+.overlay{
 
-      background:
-      linear-gradient(
-      135deg,
-      rgba(255,255,255,0.7),
-      rgba(255,120,180,0.4),
-      rgba(123,92,255,0.5),
-      rgba(255,179,107,0.5)
-      );
+  position:absolute;
 
-      -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
+  inset:0;
 
-      -webkit-mask-composite:xor;
+  background:
+  linear-gradient(
+  to top,
+  rgba(0,0,0,0.95),
+  rgba(0,0,0,0.05)
+  );
 
-      pointer-events:none;
+}
 
-    }
+.info{
 
-    .card:hover{
+  position:absolute;
 
-      transform:
-      translateY(-15px)
-      scale(1.03);
+  bottom:0;
 
-    }
+  width:100%;
 
-    .card img{
+  padding:25px;
 
-      width:100%;
+}
 
-      height:520px;
+.info h3{
 
-      object-fit:cover;
+  font-size:30px;
 
-      display:block;
+  font-weight:400;
 
-      transition:0.8s;
+}
 
-    }
+/* PREVIEW */
 
-    .card:hover img{
+.preview-section{
 
-      transform:scale(1.1);
+  text-align:center;
 
-      filter:
-      brightness(1.08)
-      saturate(1.2);
+  padding-bottom:140px;
 
-    }
+}
 
-    .overlay{
+.preview-section h2{
 
-      position:absolute;
+  font-size:60px;
 
-      inset:0;
+  margin-bottom:40px;
 
-      background:
-      linear-gradient(
-      to top,
-      rgba(0,0,0,0.95),
-      rgba(0,0,0,0.05)
-      );
+  font-weight:200;
 
-    }
+}
 
-    .info{
+.preview-image{
 
-      position:absolute;
+  width:85%;
 
-      bottom:0;
+  max-width:950px;
 
-      width:100%;
+  border-radius:40px;
 
-      padding:25px;
+  box-shadow:
+  0 0 50px rgba(255,255,255,0.15);
 
-    }
+}
 
-    .info h3{
+/* ABOUT */
 
-      font-size:30px;
+.about{
 
-      margin-bottom:15px;
+  width:85%;
 
-      font-weight:400;
+  margin:auto;
 
-    }
+  text-align:center;
 
-    /* PREVIEW */
+  padding-bottom:140px;
 
-    .preview-section{
+}
 
-      text-align:center;
+.about h2{
 
-      padding-bottom:140px;
+  font-size:70px;
 
-    }
+  margin-bottom:25px;
 
-    .preview-section h2{
+  font-weight:200;
 
-      font-size:65px;
+}
 
-      margin-bottom:40px;
+.about p{
 
-      font-weight:200;
+  color:#ffe6ef;
 
-    }
+  max-width:800px;
 
-    .preview-image{
+  margin:auto;
 
-      width:85%;
+  line-height:1.9;
 
-      max-width:950px;
+  font-size:20px;
 
-      border-radius:40px;
+}
 
-      box-shadow:
-      0 0 50px rgba(255,255,255,0.15);
+/* SOCIALS */
 
-      transition:0.5s;
+.socials{
 
-    }
+  display:flex;
 
-    .preview-image:hover{
+  justify-content:center;
 
-      transform:scale(1.02);
+  gap:20px;
 
-      box-shadow:
-      0 0 70px rgba(255,255,255,0.2);
+  margin-bottom:120px;
 
-    }
+}
 
-    /* ABOUT */
+.socials a{
 
-    .about{
+  text-decoration:none;
 
-      width:85%;
+  color:white;
 
-      margin:auto;
+  padding:16px 30px;
 
-      text-align:center;
+  border-radius:25px;
 
-      padding-bottom:140px;
+  background:
+  rgba(255,255,255,0.08);
 
-    }
+  border:
+  1px solid rgba(255,255,255,0.15);
 
-    .about h2{
+  transition:0.4s;
 
-      font-size:70px;
+}
 
-      margin-bottom:25px;
+.socials a:hover{
 
-      font-weight:200;
+  transform:
+  translateY(-6px);
 
-    }
+}
 
-    .about p{
+/* FOOTER */
 
-      color:#ffe6ef;
+footer{
 
-      max-width:800px;
+  text-align:center;
 
-      margin:auto;
+  padding:40px;
 
-      line-height:1.9;
+  color:#ffe6ef;
 
-      font-size:20px;
+  border-top:
+  1px solid rgba(255,255,255,0.1);
 
-    }
+}
 
-    /* SOCIALS */
+/* POPUP */
 
-    .socials{
+.popup{
 
-      display:flex;
+  position:fixed;
 
-      justify-content:center;
+  inset:0;
 
-      gap:20px;
+  background:
+  rgba(0,0,0,0.92);
 
-      margin-bottom:120px;
+  display:none;
 
-      flex-wrap:wrap;
+  justify-content:center;
 
-    }
+  align-items:center;
 
-    .socials a{
+  z-index:999;
 
-      text-decoration:none;
+  padding:20px;
 
-      color:white;
+}
 
-      padding:16px 30px;
+.popup-content{
 
-      border-radius:25px;
+  width:100%;
 
-      background:
-      rgba(255,255,255,0.08);
+  max-width:1100px;
 
-      border:
-      1px solid rgba(255,255,255,0.15);
+  background:
+  rgba(255,255,255,0.05);
 
-      backdrop-filter:blur(12px);
+  border:
+  1px solid rgba(255,255,255,0.1);
 
-      transition:0.4s;
+  border-radius:35px;
 
-      font-weight:bold;
+  overflow:hidden;
 
-    }
+  backdrop-filter:blur(10px);
 
-    .socials a:hover{
+}
 
-      transform:
-      translateY(-6px);
+.popup-image{
 
-      background:
-      rgba(255,255,255,0.16);
+  width:100%;
 
-      box-shadow:
-      0 0 30px rgba(255,255,255,0.25);
+  max-height:70vh;
 
-    }
+  object-fit:cover;
 
-    /* FOOTER */
+}
 
-    footer{
+.preview-popup{
 
-      text-align:center;
+  margin-top:20px;
 
-      padding:40px;
+  border-radius:25px;
 
-      color:#ffe6ef;
+  border:
+  1px solid rgba(255,255,255,0.1);
 
-      border-top:
-      1px solid rgba(255,255,255,0.1);
+}
 
-      background:
-      rgba(0,0,0,0.15);
+.popup-info{
 
-      backdrop-filter:blur(10px);
+  padding:35px;
 
-    }
+}
 
-    /* ANIMATIONS */
+.popup-title{
 
-    @keyframes fadeUp{
+  font-size:45px;
 
-      from{
+  margin-bottom:15px;
 
-        opacity:0;
+  font-weight:300;
 
-        transform:translateY(50px);
+}
 
-      }
+.popup-description{
 
-      to{
+  color:#ffe6ef;
 
-        opacity:1;
+  line-height:1.8;
 
-        transform:translateY(0px);
+  margin-bottom:25px;
 
-      }
+}
 
-    }
+.price{
 
-    /* MOBILE */
+  font-size:22px;
 
-    @media(max-width:768px){
+  margin-bottom:25px;
 
-      h1{
-        font-size:55px;
-      }
+}
 
-      .about h2{
-        font-size:45px;
-      }
+.free{
 
-      .card img{
-        height:420px;
-      }
+  color:#9dffb0;
 
-    }
+}
 
-  </style>
+.download-btn{
 
+  display:inline-block;
+
+  text-decoration:none;
+
+  padding:16px 28px;
+
+  border-radius:20px;
+
+  background:white;
+
+  color:black;
+
+  font-weight:bold;
+
+}
+
+.close{
+
+  position:absolute;
+
+  top:25px;
+  right:25px;
+
+  font-size:40px;
+
+  cursor:pointer;
+
+}
+
+.arrows{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-top:20px;
+
+}
+
+.arrow{
+
+  cursor:pointer;
+
+  font-size:30px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  h1{
+    font-size:55px;
+  }
+
+  .popup-title{
+    font-size:35px;
+  }
+
+  .card img{
+    height:420px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
 <div class="stars">
 
-  <div class="star" style="top:10%;left:20%;"></div>
-  <div class="star" style="top:30%;left:70%;"></div>
-  <div class="star" style="top:60%;left:40%;"></div>
-  <div class="star" style="top:80%;left:10%;"></div>
-  <div class="star" style="top:50%;left:90%;"></div>
-  <div class="star" style="top:15%;left:85%;"></div>
-  <div class="star" style="top:75%;left:60%;"></div>
+<div class="star" style="top:10%;left:20%;"></div>
+<div class="star" style="top:30%;left:70%;"></div>
+<div class="star" style="top:60%;left:40%;"></div>
+<div class="star" style="top:80%;left:10%;"></div>
+<div class="star" style="top:50%;left:90%;"></div>
 
 </div>
 
 <header>
 
-  <img src="image/logo.png" class="logo-image">
+<img src="image/logo.png" class="logo-image">
 
-  <h1>Little Dreams</h1>
+<h1>Little Dreams</h1>
 
-  <p class="subtitle">
-    DREAMY DIGITAL ART
-  </p>
+<p class="subtitle">
+DREAMY DIGITAL ART
+</p>
 
-  <p class="creator">
-    by axel.art
-  </p>
+<p class="creator">
+by axel.art
+</p>
 
-  <a href="#gallery" class="enter-btn">
-    Enter The Dream
-  </a>
+<a href="#gallery" class="enter-btn">
+Enter The Dream
+</a>
 
 </header>
 
 <section class="gallery" id="gallery">
 
-  <a href="dream1.html" class="card">
-    <img src="image/1.PNG">
-    <div class="overlay"></div>
-    <div class="info">
-      <h3>Dream 1</h3>
-    </div>
-  </a>
+<div class="card" onclick="openPopup(0)">
+<img src="image/1.PNG">
+<div class="overlay"></div>
+<div class="info"><h3>Blossom Boy</h3></div>
+</div>
 
-  <a href="dream2.html" class="card">
-    <img src="image/2.PNG">
-    <div class="overlay"></div>
-    <div class="info">
-      <h3>Dream 2</h3>
-    </div>
-  </a>
+<div class="card" onclick="openPopup(1)">
+<img src="image/2.PNG">
+<div class="overlay"></div>
+<div class="info"><h3>Big Bro</h3></div>
+</div>
 
-  <a href="dream3.html" class="card">
-    <img src="image/3.PNG">
-    <div class="overlay"></div>
-    <div class="info">
-      <h3>Dream 3</h3>
-    </div>
-  </a>
+<div class="card" onclick="openPopup(2)">
+<img src="image/3.PNG">
+<div class="overlay"></div>
+<div class="info"><h3>Sunny Eye</h3></div>
+</div>
 
-  <a href="dream4.html" class="card">
-    <img src="image/4.PNG">
-    <div class="overlay"></div>
-    <div class="info">
-      <h3>Dream 4</h3>
-    </div>
-  </a>
+<div class="card" onclick="openPopup(3)">
+<img src="image/4.PNG">
+<div class="overlay"></div>
+<div class="info"><h3>Neon Love</h3></div>
+</div>
 
-  <a href="dream5.html" class="card">
-    <img src="image/5.PNG">
-    <div class="overlay"></div>
-    <div class="info">
-      <h3>Dream 5</h3>
-    </div>
-  </a>
+<div class="card" onclick="openPopup(4)">
+<img src="image/5.PNG">
+<div class="overlay"></div>
+<div class="info"><h3>Blue Pulse</h3></div>
+</div>
 
-  <a href="dream6.html" class="card">
-    <img src="image/6.PNG">
-    <div class="overlay"></div>
-    <div class="info">
-      <h3>Dream 6</h3>
-    </div>
-  </a>
+<div class="card" onclick="openPopup(5)">
+<img src="image/6.PNG">
+<div class="overlay"></div>
+<div class="info"><h3>The World Creator</h3></div>
+</div>
 
-  <a href="dream7.html" class="card">
-    <img src="image/7.PNG">
-    <div class="overlay"></div>
-    <div class="info">
-      <h3>Dream 7</h3>
-    </div>
-  </a>
+<div class="card" onclick="openPopup(6)">
+<img src="image/7.PNG">
+<div class="overlay"></div>
+<div class="info"><h3>Stage Focus</h3></div>
+</div>
 
-  <a href="dream8.html" class="card">
-    <img src="image/8.PNG">
-    <div class="overlay"></div>
-    <div class="info">
-      <h3>Dream 8</h3>
-    </div>
-  </a>
+<div class="card" onclick="openPopup(7)">
+<img src="image/8.PNG">
+<div class="overlay"></div>
+<div class="info"><h3>Skater Boy</h3></div>
+</div>
 
-  <a href="dream9.html" class="card">
-    <img src="image/9.PNG">
-    <div class="overlay"></div>
-    <div class="info">
-      <h3>Dream 9</h3>
-    </div>
-  </a>
+<div class="card" onclick="openPopup(8)">
+<img src="image/9.PNG">
+<div class="overlay"></div>
+<div class="info"><h3>Bound by Love</h3></div>
+</div>
 
-  <a href="dream10.html" class="card">
-    <img src="image/10.PNG">
-    <div class="overlay"></div>
-    <div class="info">
-      <h3>Dream 10</h3>
-    </div>
-  </a>
+<div class="card" onclick="openPopup(9)">
+<img src="image/10.PNG">
+<div class="overlay"></div>
+<div class="info"><h3>Sketched Boy</h3></div>
+</div>
 
-  <a href="dream11.html" class="card">
-    <img src="image/11.PNG">
-    <div class="overlay"></div>
-    <div class="info">
-      <h3>Dream 11</h3>
-    </div>
-  </a>
+<div class="card" onclick="openPopup(10)">
+<img src="image/11.PNG">
+<div class="overlay"></div>
+<div class="info"><h3>Fluo Flow</h3></div>
+</div>
 
 </section>
 
 <section class="preview-section">
 
-  <h2>Wallpaper Preview</h2>
+<h2>Wallpaper Preview</h2>
 
-  <img src="image/ipad-preview.png" class="preview-image">
+<img src="image/1-BIS.PNG" class="preview-image">
 
 </section>
 
 <section class="about">
 
-  <h2>Enter The Dream.</h2>
+<h2>Enter The Dream.</h2>
 
-  <p>
-    A colorful universe made of emotions,
-    imagination and dreamy digital art.
-  </p>
+<p>
+A colorful universe made of emotions,
+imagination and dreamy digital art.
+</p>
 
 </section>
 
 <div class="socials">
 
-  <a href="https://www.instagram.com/axel_draws20?igsh=dnpqZWFoc2htNnho&utm_source=qr" target="_blank">
-    Instagram
-  </a>
+<a href="https://www.instagram.com/axel_draws20?igsh=dnpqZWFoc2htNnho&utm_source=qr" target="_blank">
+Instagram
+</a>
 
 </div>
 
 <footer>
-  © 2026 Little Dreams — by axel.art
+© 2026 Little Dreams — by axel.art
 </footer>
+
+<!-- POPUP -->
+
+<div class="popup" id="popup">
+
+<div class="close" onclick="closePopup()">×</div>
+
+<div class="popup-content">
+
+<img id="popupImage" class="popup-image">
+
+<img id="popupPreview" class="popup-image preview-popup">
+
+<div class="popup-info">
+
+<h2 id="popupTitle" class="popup-title"></h2>
+
+<p class="popup-description">
+Dreamy digital wallpaper created for Little Dreams.
+Perfect for iPad, iPhone and digital setups.
+</p>
+
+<p class="price">
+Price :
+<span class="free">Free</span>
+</p>
+
+<a id="downloadBtn" class="download-btn" download>
+Télécharger
+</a>
+
+<div class="arrows">
+
+<div class="arrow" onclick="prevImage()">
+←
+</div>
+
+<div class="arrow" onclick="nextImage()">
+→
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const wallpapers = [
+
+{
+title:"Blossom Boy",
+image:"image/1.PNG",
+preview:"image/1-BIS.PNG"
+},
+
+{
+title:"Big Bro",
+image:"image/2.PNG",
+preview:"image/2-BIS.PNG"
+},
+
+{
+title:"Sunny Eye",
+image:"image/3.PNG",
+preview:"image/3-BIS.PNG"
+},
+
+{
+title:"Neon Love",
+image:"image/4.PNG",
+preview:"image/4-BIS.PNG"
+},
+
+{
+title:"Blue Pulse",
+image:"image/5.PNG",
+preview:"image/5-BIS.PNG"
+},
+
+{
+title:"The World Creator",
+image:"image/6.PNG",
+preview:"image/6-BIS.PNG"
+},
+
+{
+title:"Stage Focus",
+image:"image/7.PNG",
+preview:"image/7-BIS.PNG"
+},
+
+{
+title:"Skater Boy",
+image:"image/8.PNG",
+preview:"image/8-BIS.PNG"
+},
+
+{
+title:"Bound by Love",
+image:"image/9.PNG",
+preview:"image/9-BIS.PNG"
+},
+
+{
+title:"Sketched Boy",
+image:"image/10.PNG",
+preview:"image/10-BIS.PNG"
+},
+
+{
+title:"Fluo Flow",
+image:"image/11.PNG",
+preview:"image/11-BIS.PNG"
+}
+
+];
+
+let current = 0;
+
+function openPopup(index){
+
+current = index;
+
+document.getElementById("popup").style.display = "flex";
+
+updatePopup();
+
+}
+
+function closePopup(){
+
+document.getElementById("popup").style.display = "none";
+
+}
+
+function updatePopup(){
+
+document.getElementById("popupImage").src =
+wallpapers[current].image;
+
+document.getElementById("popupPreview").src =
+wallpapers[current].preview;
+
+document.getElementById("popupTitle").innerText =
+wallpapers[current].title;
+
+document.getElementById("downloadBtn").href =
+wallpapers[current].image;
+
+}
+
+function nextImage(){
+
+current++;
+
+if(current >= wallpapers.length){
+current = 0;
+}
+
+updatePopup();
+
+}
+
+function prevImage(){
+
+current--;
+
+if(current < 0){
+current = wallpapers.length - 1;
+}
+
+updatePopup();
+
+}
+
+</script>
 
 </body>
 </html>
