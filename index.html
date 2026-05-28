@@ -261,7 +261,11 @@
 
       animation:fadeUp 1s ease;
 
-      backdrop-filter:blur(10px);
+      text-decoration:none;
+
+      color:white;
+
+      display:block;
 
     }
 
@@ -365,37 +369,47 @@
 
     }
 
-    .btn{
+    /* PREVIEW */
 
-      display:inline-block;
+    .preview-section{
 
-      text-decoration:none;
+      text-align:center;
 
-      padding:14px 24px;
-
-      border-radius:20px;
-
-      background:
-      linear-gradient(
-      to right,
-      #ffe1ec,
-      #ffffff
-      );
-
-      color:black;
-
-      font-weight:bold;
-
-      transition:0.3s;
+      padding-bottom:140px;
 
     }
 
-    .btn:hover{
+    .preview-section h2{
 
-      transform:scale(1.05);
+      font-size:65px;
+
+      margin-bottom:40px;
+
+      font-weight:200;
+
+    }
+
+    .preview-image{
+
+      width:85%;
+
+      max-width:950px;
+
+      border-radius:40px;
 
       box-shadow:
-      0 0 25px rgba(255,255,255,0.3);
+      0 0 50px rgba(255,255,255,0.15);
+
+      transition:0.5s;
+
+    }
+
+    .preview-image:hover{
+
+      transform:scale(1.02);
+
+      box-shadow:
+      0 0 70px rgba(255,255,255,0.2);
 
     }
 
@@ -590,104 +604,101 @@
 
 <section class="gallery" id="gallery">
 
-  <div class="card">
+  <a href="dream1.html" class="card">
     <img src="image/1.PNG">
     <div class="overlay"></div>
     <div class="info">
       <h3>Dream 1</h3>
-      <a class="btn" href="image/1.PNG" download>Télécharger</a>
     </div>
-  </div>
+  </a>
 
-  <div class="card">
+  <a href="dream2.html" class="card">
     <img src="image/2.PNG">
     <div class="overlay"></div>
     <div class="info">
       <h3>Dream 2</h3>
-      <a class="btn" href="image/2.PNG" download>Télécharger</a>
     </div>
-  </div>
+  </a>
 
-  <div class="card">
+  <a href="dream3.html" class="card">
     <img src="image/3.PNG">
     <div class="overlay"></div>
     <div class="info">
       <h3>Dream 3</h3>
-      <a class="btn" href="image/3.PNG" download>Télécharger</a>
     </div>
-  </div>
+  </a>
 
-  <div class="card">
+  <a href="dream4.html" class="card">
     <img src="image/4.PNG">
     <div class="overlay"></div>
     <div class="info">
       <h3>Dream 4</h3>
-      <a class="btn" href="image/4.PNG" download>Télécharger</a>
     </div>
-  </div>
+  </a>
 
-  <div class="card">
+  <a href="dream5.html" class="card">
     <img src="image/5.PNG">
     <div class="overlay"></div>
     <div class="info">
       <h3>Dream 5</h3>
-      <a class="btn" href="image/5.PNG" download>Télécharger</a>
     </div>
-  </div>
+  </a>
 
-  <div class="card">
+  <a href="dream6.html" class="card">
     <img src="image/6.PNG">
     <div class="overlay"></div>
     <div class="info">
       <h3>Dream 6</h3>
-      <a class="btn" href="image/6.PNG" download>Télécharger</a>
     </div>
-  </div>
+  </a>
 
-  <div class="card">
+  <a href="dream7.html" class="card">
     <img src="image/7.PNG">
     <div class="overlay"></div>
     <div class="info">
       <h3>Dream 7</h3>
-      <a class="btn" href="image/7.PNG" download>Télécharger</a>
     </div>
-  </div>
+  </a>
 
-  <div class="card">
+  <a href="dream8.html" class="card">
     <img src="image/8.PNG">
     <div class="overlay"></div>
     <div class="info">
       <h3>Dream 8</h3>
-      <a class="btn" href="image/8.PNG" download>Télécharger</a>
     </div>
-  </div>
+  </a>
 
-  <div class="card">
+  <a href="dream9.html" class="card">
     <img src="image/9.PNG">
     <div class="overlay"></div>
     <div class="info">
       <h3>Dream 9</h3>
-      <a class="btn" href="image/9.PNG" download>Télécharger</a>
     </div>
-  </div>
+  </a>
 
-  <div class="card">
+  <a href="dream10.html" class="card">
     <img src="image/10.PNG">
     <div class="overlay"></div>
     <div class="info">
       <h3>Dream 10</h3>
-      <a class="btn" href="image/10.PNG" download>Télécharger</a>
     </div>
-  </div>
+  </a>
 
-  <div class="card">
+  <a href="dream11.html" class="card">
     <img src="image/11.PNG">
     <div class="overlay"></div>
     <div class="info">
       <h3>Dream 11</h3>
-      <a class="btn" href="image/11.PNG" download>Télécharger</a>
     </div>
-  </div>
+  </a>
+
+</section>
+
+<section class="preview-section">
+
+  <h2>Wallpaper Preview</h2>
+
+  <img src="image/ipad-preview.png" class="preview-image">
 
 </section>
 
