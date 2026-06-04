@@ -10,431 +10,375 @@
 <style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
+font-family:Arial,sans-serif;
+color:white;
+overflow-x:hidden;
 
-  font-family:Arial,sans-serif;
+background:
+linear-gradient(
+-45deg,
+#120818,
+#25133a,
+#4d2b63,
+#ff7aa2,
+#ffb36b
+);
 
-  color:white;
-
-  overflow-x:hidden;
-
-  background:
-  linear-gradient(
-  -45deg,
-  #120818,
-  #25133a,
-  #4d2b63,
-  #ff7aa2,
-  #ffb36b
-  );
-
-  background-size:400% 400%;
-
-  animation:bgMove 15s ease infinite;
-
-  min-height:100vh;
-
+background-size:400% 400%;
+animation:bgMove 15s ease infinite;
+min-height:100vh;
 }
 
 @keyframes bgMove{
 
-  0%{
-    background-position:0% 50%;
-  }
+0%{
+background-position:0% 50%;
+}
 
-  50%{
-    background-position:100% 50%;
-  }
+50%{
+background-position:100% 50%;
+}
 
-  100%{
-    background-position:0% 50%;
-  }
+100%{
+background-position:0% 50%;
+}
 
 }
 
-/* STARS */
-
 .stars{
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  z-index:-1;
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
 }
 
 .star{
-
-  position:absolute;
-
-  width:3px;
-  height:3px;
-
-  background:white;
-
-  border-radius:50%;
-
-  animation:twinkle 4s infinite alternate;
-
+position:absolute;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+animation:twinkle 4s infinite alternate;
 }
 
 @keyframes twinkle{
 
-  from{
-    opacity:0.3;
-    transform:scale(1);
-  }
+from{
+opacity:0.3;
+transform:scale(1);
+}
 
-  to{
-    opacity:1;
-    transform:scale(1.8);
-  }
+to{
+opacity:1;
+transform:scale(1.8);
+}
 
 }
 
-/* HEADER */
-
 header{
 
-  min-height:100vh;
+min-height:100vh;
 
-  display:flex;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 
-  flex-direction:column;
-
-  justify-content:center;
-
-  align-items:center;
-
-  text-align:center;
-
-  padding:20px;
+text-align:center;
+padding:20px;
 
 }
 
 .logo-image{
 
-  width:150px;
+width:150px;
+margin-bottom:30px;
 
-  margin-bottom:30px;
+filter:
+drop-shadow(0 0 25px rgba(255,255,255,0.5))
+drop-shadow(0 0 50px rgba(255,120,180,0.5));
 
-  filter:
-  drop-shadow(0 0 25px rgba(255,255,255,0.5))
-  drop-shadow(0 0 50px rgba(255,120,180,0.5));
-
-  animation:floatLogo 5s ease-in-out infinite;
+animation:floatLogo 5s ease-in-out infinite;
 
 }
 
 @keyframes floatLogo{
 
-  0%{
-    transform:translateY(0px);
-  }
+0%{
+transform:translateY(0);
+}
 
-  50%{
-    transform:translateY(-15px);
-  }
+50%{
+transform:translateY(-15px);
+}
 
-  100%{
-    transform:translateY(0px);
-  }
+100%{
+transform:translateY(0);
+}
 
 }
 
 h1{
 
-  font-size:90px;
-
-  font-weight:200;
-
-  letter-spacing:6px;
-
-  margin-bottom:15px;
+font-size:90px;
+font-weight:200;
+letter-spacing:6px;
+margin-bottom:15px;
 
 }
 
 .subtitle{
 
-  color:#ffe6ef;
-
-  letter-spacing:4px;
-
-  margin-bottom:20px;
+color:#ffe6ef;
+letter-spacing:4px;
+margin-bottom:20px;
 
 }
 
 .creator{
 
-  color:#f5d7e4;
-
-  font-size:20px;
-
-  margin-bottom:50px;
+color:#f5d7e4;
+font-size:20px;
+margin-bottom:50px;
 
 }
 
 .enter-btn{
 
-  text-decoration:none;
+text-decoration:none;
+color:white;
 
-  color:white;
+padding:16px 34px;
 
-  padding:16px 34px;
+border-radius:30px;
 
-  border-radius:30px;
+background:
+rgba(255,255,255,0.08);
 
-  background:
-  rgba(255,255,255,0.08);
+border:
+1px solid rgba(255,255,255,0.15);
 
-  border:
-  1px solid rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
 
-  backdrop-filter:blur(10px);
-
-  transition:0.4s;
+transition:0.4s;
 
 }
 
 .enter-btn:hover{
 
-  transform:
-  translateY(-6px);
+transform:translateY(-6px);
 
-  background:
-  rgba(255,255,255,0.15);
+background:
+rgba(255,255,255,0.15);
 
 }
 
-/* GALLERY */
-
 .gallery{
 
-  width:92%;
+width:92%;
+margin:auto;
 
-  margin:auto;
+display:grid;
 
-  display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
 
-  grid-template-columns:
-  repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
 
-  gap:35px;
-
-  padding-bottom:140px;
+padding-bottom:140px;
 
 }
 
 .card{
 
-  position:relative;
+position:relative;
 
-  border-radius:35px;
+border-radius:35px;
 
-  overflow:hidden;
+overflow:hidden;
 
-  cursor:pointer;
+cursor:pointer;
 
-  transition:0.5s;
+transition:0.5s;
 
 }
 
 .card:hover{
 
-  transform:
-  translateY(-12px)
-  scale(1.03);
+transform:
+translateY(-12px)
+scale(1.03);
 
 }
 
 .card img{
 
-  width:100%;
+width:100%;
+height:520px;
 
-  height:520px;
+object-fit:cover;
 
-  object-fit:cover;
+display:block;
 
-  display:block;
-
-  transition:0.7s;
+transition:0.7s;
 
 }
 
 .card:hover img{
 
-  transform:scale(1.08);
+transform:scale(1.08);
 
 }
 
 .overlay{
 
-  position:absolute;
+position:absolute;
+inset:0;
 
-  inset:0;
-
-  background:
-  linear-gradient(
-  to top,
-  rgba(0,0,0,0.95),
-  rgba(0,0,0,0.05)
-  );
+background:
+linear-gradient(
+to top,
+rgba(0,0,0,0.95),
+rgba(0,0,0,0.05)
+);
 
 }
 
 .info{
 
-  position:absolute;
+position:absolute;
 
-  bottom:0;
+bottom:0;
+width:100%;
 
-  width:100%;
-
-  padding:25px;
+padding:25px;
 
 }
 
 .info h3{
 
-  font-size:30px;
-
-  font-weight:400;
+font-size:30px;
+font-weight:400;
 
 }
 
-/* PREVIEW */
-
 .preview-section{
 
-  text-align:center;
-
-  padding-bottom:140px;
+text-align:center;
+padding-bottom:140px;
 
 }
 
 .preview-section h2{
 
-  font-size:60px;
-
-  margin-bottom:40px;
-
-  font-weight:200;
+font-size:60px;
+margin-bottom:40px;
+font-weight:200;
 
 }
 
 .preview-image{
 
-  width:85%;
+width:85%;
+max-width:950px;
 
-  max-width:950px;
+border-radius:40px;
 
-  border-radius:40px;
-
-  box-shadow:
-  0 0 50px rgba(255,255,255,0.15);
+box-shadow:
+0 0 50px rgba(255,255,255,0.15);
 
 }
 
-/* ABOUT */
-
 .about{
 
-  width:85%;
+width:85%;
+margin:auto;
 
-  margin:auto;
+text-align:center;
 
-  text-align:center;
-
-  padding-bottom:140px;
+padding-bottom:140px;
 
 }
 
 .about h2{
 
-  font-size:70px;
-
-  margin-bottom:25px;
-
-  font-weight:200;
+font-size:70px;
+margin-bottom:25px;
+font-weight:200;
 
 }
 
 .about p{
 
-  color:#ffe6ef;
+color:#ffe6ef;
 
-  max-width:800px;
+max-width:800px;
+margin:auto;
 
-  margin:auto;
-
-  line-height:1.9;
-
-  font-size:20px;
+line-height:1.9;
+font-size:20px;
 
 }
+  .socials{
 
-/* SOCIALS */
+display:flex;
 
-.socials{
+justify-content:center;
 
-  display:flex;
+gap:20px;
 
-  justify-content:center;
-
-  gap:20px;
-
-  margin-bottom:120px;
+margin-bottom:120px;
 
 }
 
 .socials a{
 
-  text-decoration:none;
+text-decoration:none;
 
-  color:white;
+color:white;
 
-  padding:16px 30px;
+padding:16px 30px;
 
-  border-radius:25px;
+border-radius:25px;
 
-  background:
-  rgba(255,255,255,0.08);
+background:
+rgba(255,255,255,0.08);
 
-  border:
-  1px solid rgba(255,255,255,0.15);
+border:
+1px solid rgba(255,255,255,0.15);
 
-  transition:0.4s;
+transition:0.4s;
 
 }
 
 .socials a:hover{
 
-  transform:
-  translateY(-6px);
+transform:translateY(-6px);
 
 }
 
-/* FOOTER */
-
 footer{
 
-  text-align:center;
+text-align:center;
 
-  padding:40px;
+padding:40px;
 
-  color:#ffe6ef;
+color:#ffe6ef;
 
-  border-top:
-  1px solid rgba(255,255,255,0.1);
+border-top:
+1px solid rgba(255,255,255,0.1);
 
 }
 
@@ -442,173 +386,195 @@ footer{
 
 .popup{
 
-  position:fixed;
+position:fixed;
 
-  inset:0;
+inset:0;
 
-  background:
-  rgba(0,0,0,0.92);
+background:
+rgba(0,0,0,0.92);
 
-  display:none;
+display:none;
 
-  justify-content:center;
+justify-content:center;
 
-  align-items:center;
+align-items:center;
 
-  z-index:999;
+z-index:999;
 
-  padding:20px;
+padding:20px;
 
 }
 
 .popup-content{
 
-  width:100%;
+width:100%;
 
-  max-width:1300px;
+max-width:1300px;
 
-  background:
-  rgba(255,255,255,0.05);
+background:rgba(255,255,255,0.05);
 
-  border:
-  1px solid rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.1);
 
-  border-radius:35px;
+border-radius:35px;
 
-  overflow:hidden;
+overflow:hidden;
 
-  backdrop-filter:blur(10px);
+backdrop-filter:blur(10px);
 
-  padding:30px;
+padding:30px;
 
 }
+
+.popup-images{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:20px;
+
+margin-bottom:25px;
+
 }
 
 .popup-image{
 
-  width:100%;
+width:100%;
 
-  max-height:70vh;
+height:500px;
 
-  object-fit:cover;
+object-fit:contain;
+
+border-radius:25px;
+
+background:rgba(255,255,255,0.03);
 
 }
 
 .preview-popup{
 
-  margin-top:20px;
-
-  border-radius:25px;
-
-  border:
-  1px solid rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.1);
 
 }
 
 .popup-info{
 
-  padding:35px;
+padding:10px;
 
 }
 
 .popup-title{
 
-  font-size:45px;
+font-size:45px;
 
-  margin-bottom:15px;
+margin-bottom:15px;
 
-  font-weight:300;
+font-weight:300;
 
 }
 
 .popup-description{
 
-  color:#ffe6ef;
+color:#ffe6ef;
 
-  line-height:1.8;
+line-height:1.8;
 
-  margin-bottom:25px;
+margin-bottom:25px;
 
 }
 
 .price{
 
-  font-size:22px;
+font-size:22px;
 
-  margin-bottom:25px;
+margin-bottom:25px;
 
 }
 
 .free{
 
-  color:#9dffb0;
+color:#9dffb0;
 
 }
 
 .download-btn{
 
-  display:inline-block;
+display:inline-block;
 
-  text-decoration:none;
+text-decoration:none;
 
-  padding:16px 28px;
+padding:16px 28px;
 
-  border-radius:20px;
+border-radius:20px;
 
-  background:white;
+background:white;
 
-  color:black;
+color:black;
 
-  font-weight:bold;
+font-weight:bold;
 
 }
 
 .close{
 
-  position:absolute;
+position:absolute;
 
-  top:25px;
-  right:25px;
+top:25px;
+right:25px;
 
-  font-size:40px;
+font-size:40px;
 
-  cursor:pointer;
+cursor:pointer;
 
 }
 
 .arrows{
 
-  display:flex;
+display:flex;
 
-  justify-content:space-between;
+justify-content:space-between;
 
-  margin-top:20px;
+margin-top:20px;
 
 }
 
 .arrow{
 
-  cursor:pointer;
+cursor:pointer;
 
-  font-size:30px;
+font-size:30px;
 
 }
 
-/* MOBILE */
+@media(max-width:900px){
+
+.popup-images{
+
+grid-template-columns:1fr;
+
+}
+
+.popup-image{
+
+height:350px;
+
+}
+
+}
 
 @media(max-width:768px){
 
-  h1{
-    font-size:55px;
-  }
+h1{
+font-size:55px;
+}
 
-  .popup-title{
-    font-size:35px;
-  }
+.popup-title{
+font-size:35px;
+}
 
-  .card img{
-    height:420px;
-  }
+.card img{
+height:420px;
+}
 
 }
 
@@ -616,8 +582,7 @@ footer{
 </head>
 
 <body>
-
-<div class="stars">
+  <div class="stars">
 
 <div class="star" style="top:10%;left:20%;"></div>
 <div class="star" style="top:30%;left:70%;"></div>
@@ -748,17 +713,19 @@ Instagram
 © 2026 Little Dreams — by axel.art
 </footer>
 
-<!-- POPUP -->
-
 <div class="popup" id="popup">
 
 <div class="close" onclick="closePopup()">×</div>
 
 <div class="popup-content">
 
+<div class="popup-images">
+
 <img id="popupImage" class="popup-image">
 
 <img id="popupPreview" class="popup-image preview-popup">
+
+</div>
 
 <div class="popup-info">
 
@@ -780,13 +747,9 @@ Télécharger
 
 <div class="arrows">
 
-<div class="arrow" onclick="prevImage()">
-←
-</div>
+<div class="arrow" onclick="prevImage()">←</div>
 
-<div class="arrow" onclick="nextImage()">
-→
-</div>
+<div class="arrow" onclick="nextImage()">→</div>
 
 </div>
 
@@ -800,71 +763,17 @@ Télécharger
 
 const wallpapers = [
 
-{
-title:"Blossom Boy",
-image:"image/1.PNG",
-preview:"image/1-BIS.PNG"
-},
-
-{
-title:"Big Bro",
-image:"image/2.PNG",
-preview:"image/2-BIS.PNG"
-},
-
-{
-title:"Sunny Eye",
-image:"image/3.PNG",
-preview:"image/3-BIS.PNG"
-},
-
-{
-title:"Neon Love",
-image:"image/4.PNG",
-preview:"image/4-BIS.PNG"
-},
-
-{
-title:"Blue Pulse",
-image:"image/5.PNG",
-preview:"image/5-BIS.PNG"
-},
-
-{
-title:"The World Creator",
-image:"image/6.PNG",
-preview:"image/6-BIS.PNG"
-},
-
-{
-title:"Stage Focus",
-image:"image/7.PNG",
-preview:"image/7-BIS.PNG"
-},
-
-{
-title:"Skater Boy",
-image:"image/8.PNG",
-preview:"image/8-BIS.PNG"
-},
-
-{
-title:"Bound by Love",
-image:"image/9.PNG",
-preview:"image/9-BIS.PNG"
-},
-
-{
-title:"Sketched Boy",
-image:"image/10.PNG",
-preview:"image/10-BIS.PNG"
-},
-
-{
-title:"Fluo Flow",
-image:"image/11.PNG",
-preview:"image/11-BIS.PNG"
-}
+{title:"Blossom Boy",image:"image/1.PNG",preview:"image/1-BIS.PNG"},
+{title:"Big Bro",image:"image/2.PNG",preview:"image/2-BIS.PNG"},
+{title:"Sunny Eye",image:"image/3.PNG",preview:"image/3-BIS.PNG"},
+{title:"Neon Love",image:"image/4.PNG",preview:"image/4-BIS.PNG"},
+{title:"Blue Pulse",image:"image/5.PNG",preview:"image/5-BIS.PNG"},
+{title:"The World Creator",image:"image/6.PNG",preview:"image/6-BIS.PNG"},
+{title:"Stage Focus",image:"image/7.PNG",preview:"image/7-BIS.PNG"},
+{title:"Skater Boy",image:"image/8.PNG",preview:"image/8-BIS.PNG"},
+{title:"Bound by Love",image:"image/9.PNG",preview:"image/9-BIS.PNG"},
+{title:"Sketched Boy",image:"image/10.PNG",preview:"image/10-BIS.PNG"},
+{title:"Fluo Flow",image:"image/11.PNG",preview:"image/11-BIS.PNG"}
 
 ];
 
